@@ -1,0 +1,310 @@
+/*
+ * Copyright 2022 Spotify AB
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Condensed:wght@300&family=Roboto+Condensed:wght@700&display=swap");
+
+:root {
+  --primary-highlight: #b49bc8;
+}
+
+html {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+header {
+  padding: 0; margin: 0;
+}
+
+.navigation-bar {
+  min-height: 100px;
+  background-color: #111;
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  flex-wrap: wrap;
+}
+
+footer {
+  background-color: #111;
+  border-top: 2px solid #000;
+  margin-top: 40px;
+  min-height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  margin-block-end: 1px;
+}
+
+h3 {
+  margin-block-start: 1px;
+  color: #fff;
+  display: inline-block;
+  padding: 1px 5px;
+}
+
+h4 {
+  margin-block-start: 1px;
+  font-size: 1.3em;
+  padding: 1px 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 17px;
+  padding: 10px 20px;
+}
+
+.highlight {
+  background-color: var(--primary-highlight);
+}
+
+.logo {
+  padding: 20px;
+}
+
+.logo img {
+  width: 120px;
+}
+
+button {
+  background-color: #000;
+  border: 0px;
+  color: #fff;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+header button {
+  border: 2px solid #fff;
+}
+
+button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+button:hover {
+  background-color: var(--primary-highlight);
+}
+
+.small {
+  padding: 5px 10px;
+}
+
+.danger {
+  background-color: red;
+}
+
+.danger:hover {
+  background-color: orange;
+}
+
+.container {
+  width: 70%;
+  max-width: 895px;
+  margin: auto;
+}
+
+#firebaseui-auth-container {
+  padding-top: 10px;
+}
+
+.drop-shadow {
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+  max-width: 100%;
+}
+
+.auth-status {
+  padding: 15px 20px;
+}
+
+#auth-status-button {
+  cursor: pointer;
+}
+
+.hero-banner {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.hero-banner h2 {
+  font-size: 38px;
+}
+
+.top-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1em;
+}
+
+.pitch-container {
+  flex: 2 0 250px;
+  max-width: 100%;
+}
+
+.pitch-container h2 {
+  max-width: 380px;
+  font-family: "Indie Flower", cursive;
+  font-size: 44px;
+  text-align: center;
+  margin: 60px auto 0 auto;
+}
+
+.pitch-container .quote-attribution {
+  text-align: center;
+  padding-top: 0px;
+  margin-top: 9px;
+  font-size: 18px;
+  margin-block-end: 1.8em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.episode-carroussel {
+  flex: 1 0 125px;
+  position: relative;
+}
+
+.episode-carroussel h2 {
+  padding: 0px 6px;
+  margin-block-start: 1px;
+  margin-block-end: 1px;
+}
+
+.episode-carroussel p {
+  padding: 4px 6px;
+  margin-bottom: 16px;
+}
+
+.los-badge {
+  width: 130px;
+}
+
+.rss-badge {
+  width: 31px;
+}
+
+#soa-buttons {
+  visibility: hidden;
+  text-align: center;
+}
+
+#soa-buttons.show {
+  visibility: visible;
+}
+
+.show-banner {
+  margin-top: 60px;
+}
+
+.show-banner .shows {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+.show-banner .shows .episode {
+  max-width: 225px;
+  margin: 0 auto;
+}
+.show-banner .shows .episode .image-row {
+  text-align: center;
+}
+
+.show-banner .shows a {
+  text-decoration: none;
+}
+
+#landing-page-notice {
+  color: #1d1d1d;
+  background-color: #8ac88a;
+  border-bottom: 2px solid #fff;
+  padding: 15px;
+}
+
+#landing-page-notice p {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  padding: 0px 15px;
+}
+
+#landing-page-notice p:first-child {
+  margin-top: 5px;
+}
+
+#landing-page-notice .highlight {
+  color: #fff;
+  padding: 0px 3px;
+}
+
+.footer-logo {
+  padding: 30px 30px 20px 30px;
+}
+
+footer ul {
+  padding: 10px 30px;
+}
+
+footer ul a {
+  color: #fff;
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+footer ul a:hover {
+  color: var(--primary-highlight);
+}
+
+footer ul li {
+  padding: 3px 0px;
+}
+
+.login-explainer {
+  max-width: 360px;
+  margin: auto;
+}
+
+.login-explainer p {
+  padding: 2px 5px;
+}
+
+.upsell {
+  margin-top: 50px;
+}
+
+.upsell p {
+  margin-top: 2px;
+}

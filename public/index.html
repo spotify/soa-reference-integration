@@ -1,0 +1,274 @@
+<!--
+ * Copyright 2022 Spotify AB
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home | Lunar Industries</title>
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
+    />
+    <link type="text/css" rel="stylesheet" href="/style.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.js"
+      integrity="sha512-DJw15+xxGmXB1/c6pvu2eRoVCGo5s6rdeswkFS4HLFfzNQSc6V71jk6t+eMYzlyakoLTwBrKnyhVc7SCDZOK4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/auth-status.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="robots" name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <header>
+      <div id="landing-page-notice">
+        <p>
+          This <strong>fake web app</strong> simulates an Open Access
+          integration to help prospective partners visualize how their content
+          would integrate with Spotify. Click the Login/subscribe button to
+          create an account and log in, so that you can see how the linking
+          works.
+        </p>
+        <p>
+          You can decide if you want to lead users to your content on Spotify
+          directly (and be redirected back here to link account), or if you want
+          users to link their account by clicking on the content.
+        </p>
+      </div>
+
+      <div class="navigation-bar">
+        <a href="/" class="logo">
+          <img src="/img/lunar-industries-logo.png" alt="Lunar Industries" />
+        </a>
+
+        <div class="auth-status">
+          <a id="auth-status-link">
+            <button id="auth-status-button" class="small"></button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="hero-banner">
+        <h2>Lunar Industries is a fictitious podcast network</h2>
+        <h3 class="highlight">
+          Inspiring stories for your ambitious journey. Subscribe now to start
+          listening.
+        </h3>
+      </div>
+
+      <div class="top-shelf">
+        <div class="pitch-container">
+          <h2>"An original outlook on the vast potential of life"</h2>
+          <p class="quote-attribution">Patrick. C, subscriber</p>
+
+          <div class="upsell">
+            <h4>
+              Subscribe or log in to continue to listen to stellar content
+            </h4>
+            <p>Become a subscriber today and get unlimited access!</p>
+          </div>
+
+          <div id="soa-buttons">
+            <button>
+              <a href="/api/entrypoint">Link with your Spotify account</a>
+            </button>
+
+            <button class="danger">
+              <a href="https://content-access.spotify.com"
+                >Unlink (redirects to Spotify)</a
+              >
+            </button>
+          </div>
+        </div>
+
+        <div class="episode-carroussel">
+          <h2>Living on the Moon: a new adventure</h2>
+          <p>
+            Our new production for <strong>subscribers only 🔒</strong>. Log in
+            now to listen to our new show.
+          </p>
+          <a href="https://open.spotify.com/show/0EwATaqqn7Yb0LX6O9XiqI"
+            ><img
+              class="drop-shadow"
+              alt="Podcast artwork of the latest episode of Living on the Moon"
+              src="/img/living-on-the-moon-ep-01.jpg"
+          /></a>
+        </div>
+      </div>
+
+      <div class="show-banner">
+        <h2>Unlimited access to uplifting stories from the future</h2>
+        <div class="shows">
+          <div class="episode">
+            <div class="image-row">
+              <a
+                href="https://open.spotify.com/show/7inz2m1bx25SgNBZcRzqBP"
+                rel="nofollow"
+              >
+                <img
+                  class="drop-shadow"
+                  src="/img/moonshots-artwork.jpg"
+                  alt="Podcast artwork of the show called Moonshots"
+                /> </a
+              ><br /><br />
+              <a
+                href="https://open.spotify.com/show/7inz2m1bx25SgNBZcRzqBP"
+                rel="nofollow"
+              >
+                <img
+                  src="/img/spotify-podcast-badge-blk-wht-330x80.png"
+                  class="los-badge"
+                  alt="Listen on Spotify"
+                />
+              </a>
+              &nbsp;
+              <a
+                href="https://content-access.spotifycdn.com/lunar-industries/moonshots.rss"
+                rel="nofollow"
+              >
+                <img
+                  src="/img/rss-icon.png"
+                  class="rss-badge"
+                  alt="Get RSS Feed"
+                />
+              </a>
+            </div>
+            <p>
+              <strong>Moonshots (free)</strong> is a public project and does not
+              require a paid subscription.
+            </p>
+          </div>
+          <div class="episode">
+            <div class="image-row">
+              <a
+                href="https://open.spotify.com/show/0hFhphwy0gCuuFkOGF4BRu"
+                rel="nofollow"
+              >
+                <img
+                  class="drop-shadow"
+                  src="/img/the-dark-side-artwork.jpg"
+                  alt="Podcast artwork of the show called The Dark Side"
+                /> </a
+              ><br /><br />
+              <a
+                href="https://open.spotify.com/show/0hFhphwy0gCuuFkOGF4BRu"
+                rel="nofollow"
+              >
+                <img
+                  src="/img/spotify-podcast-badge-blk-wht-330x80.png"
+                  class="los-badge"
+                  alt="Listen on Spotify"
+                />
+              </a>
+              &nbsp;
+              <a
+                href="https://content-access.spotifycdn.com/lunar-industries/the-dark-side.rss"
+                rel="nofollow"
+              >
+                <img
+                  src="/img/rss-icon.png"
+                  class="rss-badge"
+                  alt="Get RSS Feed"
+                />
+              </a>
+            </div>
+            <p>
+              <strong>The Dark Side (bonus content)</strong> is a public program
+              that has a few bonus episodes available to subscribers in the
+              “Bonus Content” tier or higher.
+            </p>
+          </div>
+          <div class="episode">
+            <div class="image-row">
+              <a
+                href="https://open.spotify.com/show/0EwATaqqn7Yb0LX6O9XiqI"
+                rel="nofollow"
+              >
+                <img
+                  class="drop-shadow"
+                  src="/img/living-on-the-moon-artwork.jpg"
+                  alt="Podcast artwork of the show Living on the Moon"
+                /> </a
+              ><br /><br />
+              <a
+                href="https://open.spotify.com/show/0EwATaqqn7Yb0LX6O9XiqI"
+                rel="nofollow"
+              >
+                <img
+                  src="/img/spotify-podcast-badge-blk-wht-330x80.png"
+                  class="los-badge"
+                  alt="Listen on Spotify"
+                />
+              </a>
+              &nbsp;
+              <a
+                href="https://content-access.spotifycdn.com/lunar-industries/living-on-the-moon.rss"
+                rel="nofollow"
+              >
+                <img
+                  src="/img/rss-icon.png"
+                  class="rss-badge"
+                  alt="Get RSS Feed"
+                />
+              </a>
+            </div>
+            <p>
+              <strong>Living on the Moon (premium)</strong> is for “Premium
+              Tier” subscribers only.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <ul>
+        <li>
+          <a href="https://github.com/spotify/soa-reference-integration"
+            >Lunar Industries on Github</a
+          >
+        </li>
+        <li>
+          <a href="https://developer.spotify.com/documentation/open-access/"
+            >Spotify Open Access Developer Guides</a
+          >
+        </li>
+        <li>
+          <a href="https://validator.w3.org/feed/" target="_blank"
+            >RSS Feed Validator</a
+          >
+        </li>
+      </ul>
+      <a
+        class="footer-logo"
+        href="https://developer.spotify.com/documentation/open-access/"
+        target="_blank"
+        ><img
+          src="img/soa-logo-footer.png"
+          alt="Spotify Open Access logo"
+          width="200"
+          height="28"
+      /></a>
+    </footer>
+  </body>
+</html>
