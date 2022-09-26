@@ -1,0 +1,111 @@
+<!--
+ * Copyright 2022 Spotify AB
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login | Lunar Industries</title>
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css"
+    />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/firebase-ui-setup.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="robots" name="robots" content="noindex, nofollow" />
+  </head>
+
+  <body>
+    <header>
+      <div class="navigation-bar section">
+        <a href="/" class="logo">
+          <img
+            src="/assets/img/lunar-industries-logo.png"
+            alt="Lunar Industries"
+          />
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="hero-banner">
+        <h2>Lunar Industries is a fictitious podcast network</h2>
+        <br />
+        <h3>
+          Inspiring stories for your ambitious journey. Subscribe now to start
+          listening.
+        </h3>
+      </div>
+
+      <div class="login-explainer">
+        <h4>Create an account & sign in</h4>
+        <p>
+          You can register with any email and password (it won't send any emails
+          so make sure you remember what you enter here).
+        </p>
+        <p>
+          We used Firebase as an off-the-shelf solution since the purpose of
+          this example app is not authentication itself. After signing in you
+          can link to your Spotify account.
+        </p>
+      </div>
+      <div id="firebaseui-auth-container"></div>
+    </div>
+
+    <footer>
+      <ul>
+        <li>
+          <a href="https://github.com/spotify/soa-reference-integration"
+            >Lunar Industries on Github</a
+          >
+        </li>
+        <li>
+          <a href="https://developer.spotify.com/documentation/open-access/"
+            >Spotify Open Access Developer Guides</a
+          >
+        </li>
+        <li>
+          <a href="https://validator.w3.org/feed/" target="_blank"
+            >RSS Feed Validator</a
+          >
+        </li>
+      </ul>
+      <a
+        class="footer-logo"
+        href="https://developer.spotify.com/documentation/open-access/"
+        target="_blank"
+        ><img
+          src="/assets/img/soa-logo-footer.png"
+          alt="Spotify Open Access logo"
+      /></a>
+    </footer>
+  </body>
+</html>

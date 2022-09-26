@@ -1,0 +1,123 @@
+<!--
+ * Copyright 2022 Spotify AB
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home | Lunar Industries</title>
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
+    />
+    <link type="text/css" rel="stylesheet" href="/style.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.js"
+      integrity="sha512-DJw15+xxGmXB1/c6pvu2eRoVCGo5s6rdeswkFS4HLFfzNQSc6V71jk6t+eMYzlyakoLTwBrKnyhVc7SCDZOK4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/auth-status.js" defer></script>
+    <script src="js/account.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="robots" name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <header>
+      <div class="navigation-bar section">
+        <a href="/" class="logo">
+          <img
+            src="/assets/img/lunar-industries-logo.png"
+            alt="Lunar Industries"
+          />
+        </a>
+        <div class="navigation-buttons">
+          <a class="no-style-link" href="/">
+            <button class="nav-button" id="my-account-button">Home</button>
+          </a>
+          <a class="auth-status-link">
+            <button class="auth-status-button primary nav-button"></button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div>
+        <h1 class="page-header">My account</h1>
+        <hr />
+        <div>
+          <h2 class="section-header">Manage subscriptions</h2>
+          <p id="no-subscriptions"></p>
+          <div id="subscription-tiers"></div>
+        </div>
+
+        <hr />
+
+        <div>
+          <h2 class="section-header">Spotify</h2>
+          <div id="spotify-link">
+            <p id="unlink-info">
+              Your account is already connected to Spotify. To unlink your
+              account click the button below, this will remove your access to
+              your paid podcasts on the Spotify app.
+            </p>
+            <button class="spotify-link">
+              <img
+                src="/assets/img/Spotify_Icon_RGB_White.png"
+                width="20"
+                height="20"
+              />
+              <span class="button-text"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <ul>
+        <li>
+          <a href="https://github.com/spotify/soa-reference-integration"
+            >Lunar Industries on Github</a
+          >
+        </li>
+        <li>
+          <a href="https://developer.spotify.com/documentation/open-access/"
+            >Spotify Open Access Developer Guides</a
+          >
+        </li>
+        <li>
+          <a href="https://validator.w3.org/feed/" target="_blank"
+            >RSS Feed Validator</a
+          >
+        </li>
+      </ul>
+      <a
+        class="footer-logo"
+        href="https://developer.spotify.com/documentation/open-access/"
+        target="_blank"
+        ><img
+          src="/assets/img/soa-logo-footer.png"
+          alt="Spotify Open Access logo"
+      /></a>
+    </footer>
+  </body>
+</html>
