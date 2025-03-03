@@ -1,0 +1,8 @@
+.DS_STORE
+/.idea
+/build
+/node_modules
+.env
+yarn-error.log
+.eslintcache
+.publish

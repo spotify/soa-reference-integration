@@ -1,0 +1,752 @@
+/*
+ * Copyright 2022 Spotify AB
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Condensed:wght@300&family=Roboto+Condensed:wght@700&display=swap");
+@font-face {
+  font-family: "Circular";
+  src: url("/assets/fonts/CircularSpUIv3T-Book.woff2") format("woff2");
+}
+
+:root {
+  --primary-highlight: #b49bc8;
+  --contrast: #ea5540;
+
+  --single-episode-width: 246px;
+  --single-episode-width-desktop: 283px;
+
+  --container-width: min(928px, calc(100% - 64px));
+}
+
+html {
+  font-family: "Roboto Condensed", Circular;
+}
+
+body {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+header {
+  padding: 0;
+  margin: 0;
+}
+
+.section {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  margin-block-end: 1px;
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 2.75rem;
+  }
+}
+
+h3 {
+  margin-block-start: 1px;
+}
+
+h4 {
+  margin-block-start: 1px;
+  font-size: 1.3em;
+  padding: 1px 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 17px;
+  line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) {
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+}
+
+.page-header {
+  margin-top: 55px;
+  margin-bottom: 48px;
+  font-size: 3.125rem;
+}
+
+.highlight {
+  background-color: var(--primary-highlight);
+}
+
+.quote {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.quote::before {
+  color: var(--contrast);
+  font-family: "Circular";
+  font-size: 10rem;
+  position: absolute;
+  line-height: 0;
+  content: "“";
+  top: 2rem;
+  left: -0.5rem;
+}
+
+.quote::after {
+  color: var(--contrast);
+  font-family: "Circular";
+  font-size: 10rem;
+  position: absolute;
+  line-height: 0;
+  content: "”";
+  bottom: -1.5rem;
+  right: -1.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote::before {
+    top: 5rem;
+    left: -4.25rem;
+  }
+  .quote::after {
+    bottom: 1rem;
+    right: 1.25rem;
+  }
+}
+
+button {
+  text-align: center;
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+button.nav-button {
+  background-color: #000;
+  color: #fff;
+  padding: 6px 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+button a {
+  text-decoration: none;
+}
+
+button.primary {
+  border: 2px solid #fff;
+}
+
+button.primary a {
+  color: #fff;
+}
+
+button.primary.inverse {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+button.cta {
+  font-size: 1rem;
+  padding: 0.75em 1.5em;
+  background-color: var(--contrast);
+}
+
+button:hover,
+button.primary.inverse:hover {
+  background-color: var(--contrast);
+  color: #fff;
+  border-color: #fff;
+}
+
+button.secondary:hover {
+  color: var(--contrast);
+  background-color: #fff;
+}
+
+button.spotify-link {
+  color: #fff;
+  padding: 0.75rem;
+  background-color: #1ed760;
+  text-transform: uppercase;
+  column-gap: 6px;
+}
+
+button.subscription-button {
+  color: var(--contrast);
+  font-weight: bold;
+  background-color: unset;
+  text-transform: initial;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+button.bonus:hover {
+  color: #000;
+}
+
+.small {
+  padding: 5px 10px;
+}
+
+.display-if-not-authenticated {
+  display: none;
+}
+
+.display {
+  display: unset;
+}
+
+.danger {
+  background-color: var(--contrast);
+}
+
+.danger:hover {
+  background-color: orange;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr var(--container-width) 1fr;
+  margin-bottom: auto;
+}
+
+.container > * {
+  grid-column: 2;
+}
+
+.full-bleed {
+  grid-column: 1 / -1;
+}
+
+.align-with-container {
+  width: var(--container-width);
+  margin: auto;
+}
+
+.section {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navigation-bar {
+  background-color: #111;
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+  padding: 24px 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .navigation-bar {
+    padding-left: 160px;
+    padding-right: 170px;
+  }
+}
+
+.logo {
+  line-height: 0;
+}
+
+.logo img {
+  width: 80px;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo img {
+    width: 145px;
+  }
+}
+
+.navigation-buttons {
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+}
+
+.navigation-buttons a,
+.navigation-buttons button {
+  height: 100%;
+}
+
+#firebaseui-auth-container {
+  padding-top: 10px;
+  min-height: 500px;
+}
+
+.auth-status-link {
+  text-decoration: none;
+}
+
+.no-style-link {
+  text-decoration: none;
+}
+
+.auth-status-button {
+  cursor: pointer;
+  font-size: 0.8125rem;
+}
+
+#my-account-button {
+  font-size: 0.8125rem;
+  gap: 11px;
+}
+
+#my-account-button span {
+  line-height: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .auth-status-button,
+  #my-account-button {
+    font-size: 1rem;
+  }
+}
+
+.hero-banner {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.hero-banner h2 {
+  font-size: 2.375rem;
+}
+
+.spotlight {
+  margin-top: 22px;
+}
+
+.spotlight .section-header {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+  .spotlight {
+    margin-top: 72px;
+  }
+
+  .spotlight .section-header {
+    font-size: 1.25rem;
+  }
+}
+
+.spotlight-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 1.125rem;
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 44px;
+}
+
+@media only screen and (min-width: 768px) {
+  .spotlight-wrapper {
+    text-align: left;
+  }
+}
+
+.spotlight-episode-cover-wrapper {
+  max-width: 349px;
+  margin: auto;
+}
+
+.spotlight-wrapper .episode-cover {
+  width: 100%;
+}
+
+.spotlight-episode-info {
+  min-width: 311px;
+  flex: 1;
+}
+
+.spotlight-wrapper h2 {
+  font-size: 1.75rem;
+  margin-top: 31px;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .spotlight-wrapper h2 {
+    margin-top: 0;
+    font-size: 2.75rem;
+  }
+}
+
+.spotlight-wrapper p {
+  margin-bottom: 33px;
+}
+
+.customer-social-proof {
+  position: relative;
+  text-align: center;
+  max-width: 606px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-attribution {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 768px) {
+  .customer-social-proof {
+    text-align: left;
+  }
+  .customer-social-proof h2 {
+    font-size: 3.125rem;
+  }
+  .quote-attribution {
+    font-size: 1.125rem;
+  }
+}
+
+.cta-banner {
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  padding-bottom: 53px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cta-banner {
+    padding-bottom: 65px;
+  }
+}
+
+.cta-banner-inner-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 124px;
+}
+
+.cta-banner-info {
+  width: min(578px, 100%);
+}
+
+.cta-banner p {
+  font-size: 1.125rem;
+  margin-bottom: 0;
+}
+
+.cta-banner button {
+  margin-top: 23px;
+}
+
+.show-banner h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-top: 53px;
+  margin-bottom: 61px;
+}
+
+@media only screen and (min-width: 768px) {
+  .showbanner h2 {
+    margin-top: 80px;
+  }
+}
+
+.los-badge {
+  width: 156px;
+}
+
+.rss-badge {
+  width: 37px;
+}
+
+#soa-connect,
+.unlink-account-link .unlink-account-link {
+  visibility: hidden;
+}
+
+#soa-connect.show {
+  visibility: visible;
+}
+
+.show-banner .shows {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--single-episode-width), 1fr)
+  );
+}
+
+@media only screen and (min-width: 768px) {
+  .show-banner .shows {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(var(--single-episode-width-desktop), 1fr)
+    );
+  }
+}
+
+.show-banner .shows .episode {
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .show-banner .shows .episode {
+    max-width: var(--single-episode-width-desktop);
+  }
+}
+
+.show-banner .shows .episode .image-row .show-cover {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .show-banner .shows .episode .image-row .show-cover {
+    width: var(--single-episode-width-desktop);
+  }
+}
+
+.show-banner .shows a {
+  text-decoration: none;
+}
+
+#no-subscriptions {
+  display: none;
+}
+
+#no-subscriptions.show {
+  display: block;
+}
+
+#subscription-tiers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 36px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.subscription-tier {
+  border: 4px solid #afafaf;
+  padding: 32px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 16px;
+  font-size: 1.125rem;
+}
+
+.subscription-tier.subscribed {
+  border-color: var(--contrast);
+}
+
+.show-info {
+  margin-bottom: 20px;
+}
+
+.subscribed-indicator {
+  visibility: hidden;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: var(--contrast);
+  color: #fff;
+  font-weight: 500;
+}
+
+.subscription-tier.subscribed .subscribed-indicator {
+  visibility: visible;
+}
+
+.subscription-tier h3 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.subscription-description {
+  font-weight: bold;
+}
+
+.subscription-price {
+  font-style: italic;
+}
+
+.show-info {
+  flex: 1;
+  text-align: left;
+}
+
+#full-unsubscribe-button {
+  display: none;
+}
+#full-unsubscribe-button.show {
+  display: inline-block;
+}
+
+.show-cover {
+  max-width: 186px;
+}
+
+.show-cover img {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.episode .episode-title {
+  font-size: 1.375rem;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.episode .episode-description {
+  font-size: 0.875rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .episode .episode-title {
+    font-size: 2rem;
+  }
+  .episode .episode-description {
+    font-size: 1rem;
+  }
+}
+
+#landing-page-notice {
+  color: #1d1d1d;
+  background-color: #ccf564;
+  border-bottom: 2px solid #fff;
+  padding-top: 23px;
+  padding-bottom: 37px;
+}
+
+@media only screen and (min-width: 768px) {
+  #landing-page-notice {
+    padding-left: 23%;
+    padding-right: 33%;
+    padding-top: 55px;
+    padding-bottom: 52px;
+  }
+}
+
+#landing-page-notice h2 {
+  margin-top: 0;
+}
+
+#landing-page-notice p {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  font-size: 0.875rem;
+}
+
+@media only screen and (min-width: 768px) {
+  #landing-page-notice p {
+    font-size: 1.125rem;
+  }
+}
+
+#landing-page-notice p:first-child {
+  margin-top: 5px;
+}
+
+#landing-page-notice .highlight {
+  color: #fff;
+  padding: 0px 3px;
+}
+
+footer {
+  background-color: #111;
+  border-top: 2px solid #000;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 23px 20px;
+}
+
+.footer-logo {
+  margin-left: 1rem;
+}
+
+.footer-logo img {
+  width: 163px;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+footer ul a {
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  footer ul a {
+    font-size: 1rem;
+  }
+}
+
+footer ul a:hover {
+  color: var(--contrast);
+}
+
+footer ul li {
+  padding: 0;
+}
+
+.login-explainer {
+  margin: auto;
+}
+
+.login-explainer p {
+  padding: 2px 5px;
+}

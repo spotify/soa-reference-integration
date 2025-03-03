@@ -1,0 +1,54 @@
+<!--
+ * Copyright 2022 Spotify AB
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Error | Lunar Industries</title>
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.js"
+      integrity="sha512-DJw15+xxGmXB1/c6pvu2eRoVCGo5s6rdeswkFS4HLFfzNQSc6V71jk6t+eMYzlyakoLTwBrKnyhVc7SCDZOK4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/auth-status.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="robots" name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="stars">
+    <h1>LUNAR INDUSTRIES</h1>
+    <div class="auth-status">
+      <a id="auth-status-link">
+        <button id="auth-status-button" class="small"></button>
+      </a>
+    </div>
+    <div class="container">
+      <p>
+        Something went wrong when linking your account.<br />This can happen if
+        you have already linked your account to a different user.<br />Unlink
+        your Spotify account and try again.
+      </p>
+      <br />
+      <a href="/">
+        <button>Go back to start page</button>
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "node backend service",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest src/*",
+    "start": "node build/index.js",
+    "dev": "ts-node-dev --respawn --watch . --files src/index.ts",
+    "build": "tsc --project tsconfig.build.json",
+    "format": "prettier --write src/*",
+    "lint": "prettier --write ./src ./public && eslint ./src --cache",
+    "lint:fix": "prettier --write ./src && eslint ./src --cache --fix",
+    "publish": "resources/scripts/deploy_to_github.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spotify/soa-reference-integration"
+  },
+  "author": "soa-devs@spotify.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node-fetch": "^2.6.12",
+    "@types/supertest": "^2.0.16",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-notice": "^1.0.0",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.4.3",
+    "prettier": "3.5.2",
+    "supertest": "^6.2.2",
+    "ts-jest": "^29.2.6",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "2.6.7"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "lint-staged": {
+    "*.(js|ts)": [
+      "prettier --write",
+      "eslint --cache"
+    ]
+  }
+}
